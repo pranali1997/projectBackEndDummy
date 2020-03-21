@@ -37,7 +37,7 @@ exports.userDetails = (req, res) => {
         CITY_TOWN: req.body.CITY_TOWN,
         LANDMARK: req.body.LANDMARK,
         EMAIL:req.body.EMAIL,
-        PASSWORD:req.body.PASSWORD
+        PASSWORD:bcrypt.hashSync(req.body.PASSWORD)
       };
     }
     USER_INFO_SERVICE.userDetails(userObj, (err, data) => {
@@ -72,20 +72,7 @@ exports.userInfo = (req, res) => {
         res.status(500).send(response);
       } else {
         stored_hash = req.body.password;
-        verify.decodePassword(stored_hash, data.password, (err, data) => {
-          if (err) {
-            res.send("please, enter valid password");
-          }
-          else {
-            verify.tokenFun(data, (err, data) => {
-              if (err) {
-                res.send("unsuccessful login")
-                console.log("something went wrong");
-              }
-            })
-            res.send("login successful.......");
-          }
-        })
+        
       }
     })
   }
@@ -93,22 +80,3 @@ exports.userInfo = (req, res) => {
     res.status(200).send({ message: "error while getting data" });
   }
 };
-
-exports.findToken=(req, res)=>{
-    jwt.verify(req.headers.token, secretKey, (err, data) => {
-        if (err) {
-            console.log("something went wrong.....");
-        }
-        else {
-            var tokenValue = req.headers.token;
-            var header = jwt.decode(tokenValue);
-            service.findOne(header.userId, ((err, data) => {
-                if (err) {
-                    console.log("something went wrong........");
-                }
-                res.send(data);
-            }))
-        }
-    }
-    )
-}

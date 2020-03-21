@@ -18,15 +18,3 @@ exports.userDetails=(obj, callback)=>{
       return callback(null,data)
     })
   }
-
-  exports. findToken=(data, callback) =>{
-    console.log(data);
-    USER_INFO_MODULE.findToken(data)
-        .then(data => {
-            
-            return callback(null, data)
-        }).catch(err => {
-            return callback({ message: "Error while retrieving login id" })
-        })
-
-}

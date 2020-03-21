@@ -52,13 +52,3 @@ exports.find=(userData,callback)=>{
         callback({message:"error while getting book details from database"})
     })
 };
-
-exports.findToken=(userData,callback)=>{
-    USERDETAILS.find(data)
-    .then(data => {
-        
-        return callback(null, data)
-    }).catch(err => {
-        return callback({ message: "Error while retrieving login id" })
-    })
-}
