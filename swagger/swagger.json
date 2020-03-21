@@ -1,0 +1,247 @@
+{
+    "swagger": 0.0,
+    "info": {
+        "version": "1.0.0",
+        "title": "E-Book Store App",
+        "description": "this is a E-Book App Swagger to access rest API server",
+        "license": {
+            "name": "",
+            "url": ""
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [{
+        "name": "Users",
+        "description": "API for users in the system"
+    }],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/Books": {
+            "post": {
+                "tags": [
+                    "BookData"
+                ],
+                "description": [{
+                    "name": "bookData",
+                    "in": "body",
+                    "description": "Book data that we want to create",
+                    "schema": {
+                        "TITLE": { "type": "String" },
+                        "AUTHOR": { "type": "String"},
+                        "YEAR": { "type": "Number"},
+                        "DESCRIPTION": { "type": "String"},
+                        "PRICE": { "type": "Number"},
+                        "RATING": { "type": "Number"},
+                        "NOOFCOUNT":{"type":"Number"},
+                        "IMAGEURL": { "type": "String" }                      }
+                }],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "new book added",
+                        "schema": {
+                            "TITLE": { "type": "String" },
+                            "AUTHOR": { "type": "String"},
+                            "YEAR": { "type": "Number"},
+                            "DESCRIPTION": { "type": "String"},
+                            "PRICE": { "type": "Number"},
+                            "RATING": { "type": "Number"},
+                            "NOOFCOUNT":{"type":"Number"},
+                            "IMAGEURL": { "type": "String" }                              }
+                    }
+                }
+            }
+        },
+        "/getBooks": {
+            "get": {
+                "tags": [
+                    "BookData"
+                ],
+                "description": [{
+                    "name": "bookData",
+                    "in": "body",
+                    "description": "Book data that we want to get",
+                    "schema": {
+                        "TITLE": { "type": "String" },
+                        "AUTHOR": { "type": "String"},
+                        "YEAR": { "type": "Number"},
+                        "DESCRIPTION": { "type": "String"},
+                        "PRICE": { "type": "Number"},
+                        "RATING": { "type": "Number"},
+                        "NOOFCOUNT":{"type":"Number"},
+                        "IMAGEURL": { "type": "String" }                          }
+                }]
+            }
+
+        },
+        "/searchBook": {
+            "get": {
+                "tags": [
+                    "BookData"
+                ],
+                "description": [{
+                    "name": "bookData",
+                    "in": "body",
+                    "description": "Book data that we want to search",
+                    "schema": {
+                        "TITLE": { "type": "String" },
+                        "AUTHOR": { "type": "String"},
+                        "YEAR": { "type": "Number"},
+                        "DESCRIPTION": { "type": "String"},
+                        "PRICE": { "type": "Number"},
+                        "RATING": { "type": "Number"},
+                        "NOOFCOUNT":{"type":"Number"},
+                        "IMAGEURL": { "type": "String" }                          }
+                }]
+            }
+
+        },
+        "/sortBooksLowToHigh": {
+            "get": {
+                "tags": [
+                    "BookData"
+                ],
+                "description": [{
+                    "name": "bookData",
+                    "in": "body",
+                    "description": "Book data that we want to sort by price",
+                    "schema": {
+                        "TITLE": { "type": "String" },
+                        "AUTHOR": { "type": "String"},
+                        "YEAR": { "type": "Number"},
+                        "DESCRIPTION": { "type": "String"},
+                        "PRICE": { "type": "Number"},
+                        "RATING": { "type": "Number"},
+                        "NOOFCOUNT":{"type":"Number"},
+                        "IMAGEURL": { "type": "String" }                          }
+                }]
+            }
+
+        },
+        "/sortBooksHighToLow": {
+            "get": {
+                "tags": [
+                    "BookData"
+                ],
+                "description": [{
+                    "name": "bookData",
+                    "in": "body",
+                    "description": "Book data that we want to sort by price",
+                    "schema": {
+                        "TITLE": { "type": "String" },
+                        "AUTHOR": { "type": "String"},
+                        "YEAR": { "type": "Number"},
+                        "DESCRIPTION": { "type": "String"},
+                        "PRICE": { "type": "Number"},
+                        "RATING": { "type": "Number"},
+                        "NOOFCOUNT":{"type":"Number"},
+                        "IMAGEURL": { "type": "String" }                          }
+                }]
+            }
+
+        },
+        "/sortBooksByArrival": {
+            "get": {
+                "tags": [
+                    "BookData"
+                ],
+                "description": [{
+                    "name": "bookData",
+                    "in": "body",
+                    "description": "Book data that we want to sort by arrival",
+                    "schema": {
+                        "TITLE": { "type": "String" },
+                        "AUTHOR": { "type": "String"},
+                        "YEAR": { "type": "Number"},
+                        "DESCRIPTION": { "type": "String"},
+                        "PRICE": { "type": "Number"},
+                        "RATING": { "type": "Number"},
+                        "NOOFCOUNT":{"type":"Number"},
+                        "IMAGEURL": { "type": "String" }                          }
+                }]
+            }
+
+        },
+        "/getImage": {
+            "get": {
+                "tags": [
+                    "BookData"
+                ],
+                "description": [{
+                    "name": "bookData",
+                    "in": "body",
+                    "description": "Book image that we want to get",
+                    "schema": {
+                        "TITLE": { "type": "String" },
+                        "AUTHOR": { "type": "String"},
+                        "YEAR": { "type": "Number"},
+                        "DESCRIPTION": { "type": "String"},
+                        "PRICE": { "type": "Number"},
+                        "RATING": { "type": "Number"},
+                        "NOOFCOUNT":{"type":"Number"},
+                        "IMAGEURL": { "type": "String" }                          }
+                }]
+            }
+
+        },
+        "/userDetails": {
+            "post": {
+                "tags": [
+                    "UserData"
+                ],
+                "description": [{
+                    "name": "userData",
+                    "in": "body",
+                    "description": "User data that we want to create",
+                    "schema": {
+                        "NAME": { "type": "String"},
+                        "PHONE_NO": { "type": "Number"},
+                        "PIN": { "type": "Number"},
+                        "LOCALITY": { "type": "String"},
+                        "ADDRESS": { "type": "String"},
+                        "CITY_TOWN": { "type": "String"},
+                        "LANDMARK": { "type": "String"},
+                        "EMAIL": { "type": "String"},
+                        "PASSWORD": {"type": "String"}
+                    }
+                }]
+            }
+
+        },
+        "/userDetails": {
+            "get": {
+                "tags": [
+                    "UserData"
+                ],
+                "description": [{
+                    "name": "userData",
+                    "in": "body",
+                    "description": "User data that we want to get",
+                    "schema": {
+                        "NAME": { "type": "String"},
+                        "PHONE_NO": { "type": "Number"},
+                        "PIN": { "type": "Number"},
+                        "LOCALITY": { "type": "String"},
+                        "ADDRESS": { "type": "String"},
+                        "CITY_TOWN": { "type": "String"},
+                        "LANDMARK": { "type": "String"},
+                        "EMAIL": { "type": "String"},
+                        "PASSWORD": {"type": "String"}
+                         }
+                }]
+            }
+
+        }
+    }
+}
