@@ -7,11 +7,15 @@ const app = express();
 
 const expressValidator = require("express-validator"); 
 
+const swaggerUi=require('swagger-ui-express')
+const swaggerDocument=require('./swagger/swagger.json')
+
 var cors = require("cors");
 app.use(cors());
 
 require("dotenv").config();
 
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 
